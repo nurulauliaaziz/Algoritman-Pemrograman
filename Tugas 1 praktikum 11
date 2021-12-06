@@ -1,0 +1,32 @@
+class mahasiswa:
+    
+    jumlah = 0
+    
+    def __init__(self,nama,nim,universitas):
+        self.nama = str.upper(nama)
+        self.nim = str(nim)
+        self.universitas = str(universitas)
+        mahasiswa.jumlah += 1
+        
+    def biodata(self):
+        return str(f'{self.nama} ;  {self.nim} ; {self.universitas}')
+    
+    def cetak(self):
+        print()
+        print('nama:',self.nama)
+        print('nim:',self.nim)
+        print('universitas:',self.universitas)
+        print()
+        input(f'Jumlah mahasiswa adalah {mahasiswa.jumlah} orang\nPRESS ENTER')
+
+
+while True:
+    print(f'\nmahasiswa {(mahasiswa.jumlah)+1}\nKetik 9 untuk berhenti!')
+    x = str(input('nama: '))
+    if x == '9':
+        break
+    y = str(input('nim: '))
+    z = str(input('universitas: '))
+    n = mahasiswa(x,y,z)
+    
+    n.cetak()
