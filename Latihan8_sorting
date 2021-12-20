@@ -1,0 +1,131 @@
+def bubble(arr):
+    n = len(arr)
+    for i in range(n-1):
+        for j in range(0, n-i-1):
+ 
+            if arr[j] > arr[j + 1] :
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+def insertion(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i-1
+        while j >=0 and key < arr[j] :
+                arr[j+1] = arr[j]
+                j -= 1
+        arr[j+1] = key
+def selection(A):
+    for i in range(len(A)):
+        min_idx = i
+        for j in range(i+1, len(A)):
+            if A[min_idx] > A[j]:
+                min_idx = j
+        A[i], A[min_idx] = A[min_idx], A[i]
+
+def newfile():
+    print(new_info)
+    lis = []
+    while True:
+        try:
+           angka = int(input(new_ask))
+        except ValueError:
+            break
+        else:
+            lis.append(angka)
+    return lis
+
+errormsg=('''
+
+  error value!!!
+  PRESS ENTER!''')
+
+new_info=('''
+
+ NEW
+ masukkan angka perbaris''')
+
+new_ask=('''
+  >>''')
+
+new_error=('''
+  Isi list harus lebih dari 1, coba lagi!
+  PRESS ENTER!''')
+impor_failed=('''
+
+  file kamu salah''')
+
+home_ask=('''
+
+  PROGRAM SORTING (tekan A atau a untuk membuka file)
+    >> ''')
+home_listupdated=('''
+
+  FILE TELAH BERHASIl DIBUAT!
+  PRESS ENTER!''' )
+saved=('''
+
+  Disimpan! Berhasil!
+  PRESS ENTER!''' )
+
+input('membuat metode sorting\ntekan enter untuk melanjutkan!')
+neverend = 1
+while neverend == 1:
+ while True:
+
+  opsi1 = str.lower(input(home_ask))
+  if opsi1 == 'a':
+     arr = newfile()
+     if len(arr) <= 1:
+        input(new_error)
+     else:
+        input(home_listupdated)
+        break
+  elif opsi1 == 'b':
+
+    if arr != False:
+       input(home_listupdated)
+       break
+  else:
+    input(errormsg)
+
+ method_ask=(f'''
+
+  List = {arr}
+  List* = ???
+
+  pilih metodenya yang akan anda pilih
+   a. BUBBLE SORT
+   b. INSERTION SORT
+   c. SELECTION SORT
+
+   >> ''')
+ arrs = [str(i) for i in arr]
+ arrs = [int(i) for i in arr]
+ while True:
+
+   opsi2 = str.lower(input(method_ask))
+   if opsi2 == 'a':
+      bubble(arr)
+      break
+   elif opsi2 == 'b':
+      insertion(arr)
+      break
+   elif opsi2 == 'c':
+      selection(arr)
+      break
+   else:
+      input(errormsg)
+
+ hasil=(f'''
+
+   List = {arrs}
+   List* = {arr}
+
+ trimakasih sudah mengisi ''')
+
+
+ save = str.lower(input(hasil))
+ if save == 'y':
+    break
+ else:
+    pass
